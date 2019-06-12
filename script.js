@@ -19,9 +19,16 @@ for(let i = 0; i < squares.length; i++){
         let clickedColor = this.style.backgroundColor;
         if(clickedColor === pickColor){
             message.textContent = "Correct";
+            changedColors(clickedColor);
         } else {
             this.style.backgroundColor = "#232323";
             message.textContent = "Try Again";
         }
     });
+}
+
+const changedColors = (color) => {
+    for(let i = 0; i < squares.length; i++){
+        squares[i].style.backgroundColor = color;
+    }
 }
