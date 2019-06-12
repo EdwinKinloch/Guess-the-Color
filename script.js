@@ -18,7 +18,7 @@ for(let i = 0; i < squares.length; i++){
     squares[i].addEventListener("click", function(){
         let clickedColor = this.style.backgroundColor;
         if(clickedColor === pickColor){
-            alert("Correct");
+            message.textContent = "Correct";
         } else {
             this.style.backgroundColor = "#232323";
             message.textContent = "Try Again";
