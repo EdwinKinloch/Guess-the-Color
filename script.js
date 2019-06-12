@@ -19,7 +19,7 @@ for(let i = 0; i < squares.length; i++){
         if(clickedColor === pickColor){
             alert("Correct");
         } else {
-            alert("Wrong");
+            this.style.backgroundColor = "#232323";
         }
     });
 }
