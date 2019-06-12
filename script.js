@@ -8,7 +8,7 @@ let colors = [
 ];
 
 let squares = document.querySelectorAll(".square");
-let pickColor = colors[3];
+var pickColor = pickColor();
 let colorDisplay = document.getElementById('colorDisplay');
 let message = document.getElementById("message");
 colorDisplay.textContent = pickColor;
@@ -31,4 +31,9 @@ const changedColors = (color) => {
     for(let i = 0; i < squares.length; i++){
         squares[i].style.backgroundColor = color;
     }
+}
+
+function pickColor () {
+    var random = Math.floor(Math.random() * colors.length);
+    return colors[random];
 }
