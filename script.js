@@ -9,7 +9,7 @@ const generateRandomColors = (num) =>{
     return arr;
 }
 
-function pickColor () {
+const correctColor = () => {
     var random = Math.floor(Math.random() * colors.length);
     return colors[random];
 }
@@ -32,7 +32,7 @@ const randomColor = () => {
 
 let colors = generateRandomColors(6);
 let squares = document.querySelectorAll(".square");
-var pickColor = pickColor();
+let pickColor = correctColor();
 let colorDisplay = document.getElementById('colorDisplay');
 let message = document.getElementById("message");
 let h1 = document.querySelector('h1');
@@ -40,9 +40,9 @@ let resetButton = document.querySelector('#reset');
 
 resetButton.addEventListener("click", function(){
     //generate all new colors
-    let colors = generateRandomColors(6);
+    generateRandomColors(6);
     //pick a new random color from array
-    var pickColor = pickColor();
+    correctColor();
     //chang colors of squares
     for(let i = 0; i < squares.length; i++){
         squares[i].style.background = colors[i];
