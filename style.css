@@ -19,6 +19,9 @@ h1 {
     max-width: 600px;
 }
 
-#message {
-    color: white;
+#striped {
+    background-color: white;
+    height: 30px;
+    text-align: center;
+    color: black;
 }
