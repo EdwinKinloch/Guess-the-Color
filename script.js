@@ -1,14 +1,3 @@
-const changedColors = (color) => {
-    for(let i = 0; i < squares.length; i++){
-        squares[i].style.backgroundColor = color;
-    }
-}
-
-function pickColor () {
-    var random = Math.floor(Math.random() * colors.length);
-    return colors[random];
-}
-
 const generateRandomColors = (num) =>{
     //make an array
     let arr = []
@@ -18,6 +7,17 @@ const generateRandomColors = (num) =>{
         arr.push(randomColor())
     }
     return arr;
+}
+
+function pickColor () {
+    var random = Math.floor(Math.random() * colors.length);
+    return colors[random];
+}
+
+const changedColors = (color) => {
+    for(let i = 0; i < squares.length; i++){
+        squares[i].style.backgroundColor = color;
+    }
 }
 
 const randomColor = () => {
