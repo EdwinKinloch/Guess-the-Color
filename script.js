@@ -40,9 +40,11 @@ let resetButton = document.querySelector('#reset');
 
 resetButton.addEventListener("click", function(){
     //generate all new colors
-    generateRandomColors(6);
+    let colors = generateRandomColors(6);
     //pick a new random color from array
-    correctColor();
+    let pickColor = correctColor();
+    //change colorDisplay to match picked color
+    colorDisplay.textContent = pickColor;
     //chang colors of squares
     for(let i = 0; i < squares.length; i++){
         squares[i].style.background = colors[i];
@@ -56,6 +58,7 @@ for(let i = 0; i < squares.length; i++){
     squares[i].style.backgroundColor = colors[i];
     squares[i].addEventListener("click", function(){
         let clickedColor = this.style.backgroundColor;
+        console.log(clickedColor, pickColor)
         if(clickedColor === pickColor){
             message.textContent = "Correct";
             changedColors(clickedColor);
