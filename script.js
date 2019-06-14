@@ -15,6 +15,7 @@ const correctColor = () => {
 }
 
 const changedColors = (color) => {
+    //loop through all squares
     for(let i = 0; i < squares.length; i++){
         squares[i].style.backgroundColor = color;
     }
@@ -32,7 +33,7 @@ const randomColor = () => {
 
 let colors = generateRandomColors(6);
 let squares = document.querySelectorAll(".square");
-let pickColor = correctColor();
+let pickedColor = correctColor();
 let colorDisplay = document.getElementById('colorDisplay');
 let message = document.getElementById("message");
 let h1 = document.querySelector('h1');
@@ -42,9 +43,9 @@ resetButton.addEventListener("click", function(){
     //generate all new colors
     let colors = generateRandomColors(6);
     //pick a new random color from array
-    let pickColor = correctColor();
+    let pickedColor = correctColor();
     //change colorDisplay to match picked color
-    colorDisplay.textContent = pickColor;
+    colorDisplay.textContent = pickedColor;
     //chang colors of squares
     for(let i = 0; i < squares.length; i++){
         squares[i].style.background = colors[i];
@@ -52,17 +53,21 @@ resetButton.addEventListener("click", function(){
     h1.style.backgroundColor = "#232323";
 })
 
-colorDisplay.textContent = pickColor;
+colorDisplay.textContent = pickedColor;
 
 for(let i = 0; i < squares.length; i++){
+    // add initial colors to squares
     squares[i].style.backgroundColor = colors[i];
+    //add click listeners to squares
     squares[i].addEventListener("click", function(){
+        //grab color of clicked squares
         let clickedColor = this.style.backgroundColor;
-        console.log(clickedColor, pickColor)
-        if(clickedColor === pickColor){
+        console.log(clickedColor, pickedColor)
+        //compare color to pickedColor
+        if(clickedColor === pickedColor){
             message.textContent = "Correct";
             changedColors(clickedColor);
-            h1.style.backgroundColor = pickColor;
+            h1.style.backgroundColor = pickedColor;
             resetButton.textContent = "Play Again?";
         } else {
             this.style.backgroundColor = "#232323";
