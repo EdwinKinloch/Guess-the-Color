@@ -39,19 +39,20 @@ let message = document.getElementById("message");
 let h1 = document.querySelector('h1');
 let resetButton = document.querySelector('#reset');
 
-resetButton.addEventListener("click", function(){
-    //generate all new colors
-    let colors = generateRandomColors(6);
-    //pick a new random color from array
-    let pickedColor = correctColor();
-    //change colorDisplay to match picked color
-    colorDisplay.textContent = pickedColor;
-    //chang colors of squares
-    for(let i = 0; i < squares.length; i++){
-        squares[i].style.background = colors[i];
-    }
-    h1.style.backgroundColor = "#232323";
-})
+// resetButton.addEventListener("click", function(){
+//     //generate all new colors
+//     let colors = generateRandomColors(6);
+//     //pick a new random color from array
+//     let pickedColor = correctColor();
+//     console.log(colors, pickedColor)
+//     //change colorDisplay to match picked color
+//     colorDisplay.textContent = pickedColor;
+//     //chang colors of squares
+//     for(let i = 0; i < squares.length; i++){
+//         squares[i].style.background = colors[i];
+//     }
+//     h1.style.backgroundColor = "#232323";
+// })
 
 colorDisplay.textContent = pickedColor;
 
