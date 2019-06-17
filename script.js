@@ -38,6 +38,18 @@ let colorDisplay = document.getElementById('colorDisplay');
 let message = document.getElementById("message");
 let h1 = document.querySelector('h1');
 let resetButton = document.querySelector('#reset');
+let easyBtn = document.querySelector('#easyBtn');
+let hardBtn = document.querySelector('#hardBtn');
+
+easyBtn.addEventListener("click", () => {
+    easyBtn.classList.add("selected")
+    hardBtn.classList.remove("selected")
+})
+
+hardBtn.addEventListener("click", () => {
+    hardBtn.classList.add("selected")
+    easyBtn.classList.remove("selected")
+})
 
 // resetButton.addEventListener("click", function(){
 //     //generate all new colors
